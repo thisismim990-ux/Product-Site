@@ -2,39 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Product Page</title>
+  <title>Product Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       margin: 0;
-      padding: 0;
+      padding: 10px;
     }
-    .container {
-      max-width: 400px;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+    .product {
       background: #fff;
-      margin: 20px auto;
-      padding: 16px;
+      padding: 10px;
       border-radius: 8px;
+      text-align: center;
     }
-    img {
-      max-width: 350px;
+    .product img {
+      width: 100%;
       border-radius: 6px;
     }
-    h1 {
-      font-size: 22px;
-      margin: 12px 0;
+    h3 {
+      font-size: 16px;
+      margin: 8px 0 4px;
     }
     p {
-      color: #555;
       font-size: 14px;
+      margin: 4px 0;
     }
-    .price {
-      margin: 12px 0;
+    .price del {
+      color: #999;
+      margin-right: 6px;
     }
-    .old {
-      text-decoration: line-through;
+    .price strong {
+      color: #e60000;
+      font-size: 16px;
+    }
+    .btns {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .btn {
+      flex: 1;
+      padding: 8px;
+      font-size: 13px;
+      text-decoration: none;
+      border-radius: 5px;
+      color: #fff;
+    }
+    .whatsapp {
+      background: #25D366;
+    }
+    .order {
+      background: #ff6600;
+    }
+    form {
+      margin-top: 6px;
+      display: none;
+    }
+    input {
+      width: 100%;
+      padding: 7px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+
+  <script>
+    function toggleForm(id) {
+      var f = document.getElementById(id);
+      f.style.display = f.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</head>
+<body>
+
+<div class="products">
+
+  <div class="product">
+    <img src="4-4-1-571x571.jpg">
+    <h3>SADOER Collagen Face Serum</h3>
+    <p>Boosts skin elasticity and reduces fine lines</p>
+    <div class="price"><del>৳1050</del><strong>৳899</strong></div>
+
+    <div class="btns">
+      <a class="btn whatsapp" href="https://wa.me/8801940791775">WhatsApp</a>
+      <a class="btn order" onclick="toggleForm('f1')">Order Now</a>
+    </div>
+
+    <form id="f1">
+      <input type="text" placeholder="Your Name">
+      <input type="text" placeholder="Phone Number">
+      <input type="text" placeholder="Address">
+      <button>Place Order</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>      text-decoration: line-through;
       color: #999;
       margin-right: 8px;
     }
